@@ -1,0 +1,42 @@
+<?php
+
+$corps =<<<EOT
+<h1>Nouveau jeu de société</h1>
+<form class="form_board_game" method="post" action="index.php?action={$cible}&gameId={$gameId}" name="form_new_boardGame">
+<div class="form-wrapper">
+  <fieldset>  
+
+    <input type="hidden" name="gameId" value="{$gameId}">
+    <label>Nom du jeu</label><br>
+    <input type="text" name="gameName" placeholder="UNO" value="{$gameName}"><br>
+    <span class="red">{$erreur["gameName"]}</span><br>
+
+    <label>Editeur du jeu</label><br>
+    <input type="text" name="editor" placeholder="Mattel" value="{$editor}"><br>
+    <span class="red">{$erreur["editor"]}</span><br>
+    
+    <label>Style de jeu</label><br>
+    <input type="text" name="style" placeholder="jeu de carte" value="{$style}"><br>
+    <span class="red">{$erreur["style"]}</span><br>
+    
+    <label>Date de sortie</label><br>
+    <input type="text" placeholder="AAAA-MM-JJ" name="releaseDate" value="{$releaseDate}"><br>
+    <span class="red">{$erreur["releaseDate"]}</span><br>
+    
+    <label>Combien de joueurs (max)</label><br>
+    <input type="text" name="numberPlayers" placeholder="8" value="{$numberPlayers}"><br>
+    <span class="red">{$erreur["numberPlayers"]}</span><br>
+
+    <label>Durée moyenne d'une partie (en min)</label><br>
+    <input type="text" name="durationGame" placeholder="15" value="{$durationGame}"><br>
+    <span class="red">{$erreur["durationGame"]}</span><br>
+    
+    <input type="submit" name="new_boardGame_valider" value="Valider" class="submit-bouton">
+
+  </fieldset>
+</div>
+</form>
+EOT;
+$zonePrincipale=$corps;
+
+?>
